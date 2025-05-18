@@ -1,0 +1,29 @@
+
+---
+
+### 🧰 2. `.devcontainer/devcontainer.json` – קביעת סביבת העבודה של Codespace
+
+צור תיקייה בשם `.devcontainer` בתיק הראשי שלך, והוסף את הקובץ הבא:
+
+```json
+{
+  "name": "LearnAI Dev",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "postCreateCommand": "npm install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.copilot",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  },
+  "forwardPorts": [3000],
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    },
+    "ghcr.io/devcontainers/features/git:1": {}
+  }
+}
